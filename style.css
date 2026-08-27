@@ -5,6 +5,8 @@
   --brun-blod:#6B635A;
   --terrakotta:#C97B63;
   --terrakotta-mork:#A85F49;
+  --terrakotta-dyb:#8E4E3A;
+  --link:#A05543;
   --rosa:#E8C9BE;
   --linje:#E7DDD3;
   --maks:min(100% - 2.5rem, 62rem);
@@ -21,7 +23,7 @@ h1{font-size:clamp(2.6rem,9vw,4.2rem);margin:0;letter-spacing:-.01em}
 h2{font-size:clamp(1.7rem,5vw,2.3rem);margin:0 0 1.1rem}
 h3{font-size:1.2rem;margin:0 0 .4rem}
 p{margin:0 0 1.1rem}
-a{color:var(--terrakotta-mork)}
+a{color:var(--link)}
 .wrap{width:var(--maks);margin-inline:auto}
 .smal{max-width:44rem}
 
@@ -32,11 +34,11 @@ a{color:var(--terrakotta-mork)}
 .nav-links{display:flex;gap:1.35rem;overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{color:var(--brun-blod);text-decoration:none;font-size:.9rem;white-space:nowrap}
-.nav-links a:hover{color:var(--terrakotta-mork)}
+.nav-links a:hover{color:var(--link)}
 
 /* knapper */
-.knap{display:inline-block;background:var(--terrakotta);color:#fff;text-decoration:none;padding:.85rem 1.6rem;border-radius:999px;font-size:1rem;letter-spacing:.01em;transition:background .2s}
-.knap:hover{background:var(--terrakotta-mork)}
+.knap{display:inline-block;background:var(--terrakotta-mork);color:#fff;text-decoration:none;padding:.85rem 1.6rem;border-radius:999px;font-size:1rem;letter-spacing:.01em;transition:background .2s}
+.knap:hover{background:var(--terrakotta-dyb)}
 .knap-let{display:inline-block;color:var(--brun);text-decoration:none;padding:.85rem 1.5rem;border:1px solid var(--linje);border-radius:999px;background:var(--kort);font-size:1rem}
 .knap-let:hover{border-color:var(--terrakotta)}
 .knapper{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
@@ -45,7 +47,7 @@ a{color:var(--terrakotta-mork)}
 .hero{padding:4rem 0 3.5rem}
 .hero-grid{display:grid;gap:2.5rem}
 .foto{width:min(16.5rem,62vw);aspect-ratio:1;border-radius:1.25rem;object-fit:cover;object-position:center top;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.4)}
-.overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--terrakotta-mork);margin:0 0 1rem}
+.overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--link);margin:0 0 1rem}
 .titel-linje{color:var(--brun-blod);font-size:1.05rem;margin:.9rem 0 0}
 .citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,3.4vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
 .citat cite{display:block;margin-top:.7rem;font-family:"Lato",sans-serif;font-style:normal;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-blod)}
