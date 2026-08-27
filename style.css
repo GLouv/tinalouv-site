@@ -1,0 +1,81 @@
+:root{
+  --creme:#FAF6F1;
+  --kort:#FFFDFB;
+  --brun:#3F3A34;
+  --brun-blod:#6B635A;
+  --terrakotta:#C97B63;
+  --terrakotta-mork:#A85F49;
+  --rosa:#E8C9BE;
+  --linje:#E7DDD3;
+  --maks:min(100% - 2.5rem, 62rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--creme);color:var(--brun);
+  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:"Playfair Display","Lora",Georgia,"Times New Roman",serif;font-weight:500;line-height:1.2}
+h1{font-size:clamp(2.6rem,9vw,4.2rem);margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,5vw,2.3rem);margin:0 0 1.1rem}
+h3{font-size:1.2rem;margin:0 0 .4rem}
+p{margin:0 0 1.1rem}
+a{color:var(--terrakotta-mork)}
+.wrap{width:var(--maks);margin-inline:auto}
+.smal{max-width:44rem}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(250,246,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linje)}
+.nav-inner{width:var(--maks);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.maerke{font-family:"Playfair Display",Georgia,serif;font-size:1.15rem;letter-spacing:.02em;text-decoration:none;color:var(--brun);white-space:nowrap}
+.nav-links{display:flex;gap:1.35rem;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--brun-blod);text-decoration:none;font-size:.9rem;white-space:nowrap}
+.nav-links a:hover{color:var(--terrakotta-mork)}
+
+/* knapper */
+.knap{display:inline-block;background:var(--terrakotta);color:#fff;text-decoration:none;padding:.85rem 1.6rem;border-radius:999px;font-size:1rem;letter-spacing:.01em;transition:background .2s}
+.knap:hover{background:var(--terrakotta-mork)}
+.knap-let{display:inline-block;color:var(--brun);text-decoration:none;padding:.85rem 1.5rem;border:1px solid var(--linje);border-radius:999px;background:var(--kort);font-size:1rem}
+.knap-let:hover{border-color:var(--terrakotta)}
+.knapper{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+
+/* hero */
+.hero{padding:4rem 0 3.5rem}
+.hero-grid{display:grid;gap:2.5rem}
+.foto{width:min(15rem,55vw);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.45)}
+.overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--terrakotta-mork);margin:0 0 1rem}
+.titel-linje{color:var(--brun-blod);font-size:1.05rem;margin:.9rem 0 0}
+.citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,3.4vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
+.citat cite{display:block;margin-top:.7rem;font-family:"Lato",sans-serif;font-style:normal;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-blod)}
+
+/* sektioner */
+section{padding:3.5rem 0;border-top:1px solid var(--linje)}
+.baand{background:var(--rosa);border-top:0}
+.kort-net{display:grid;gap:1.1rem;margin-top:1.8rem}
+.kort{background:var(--kort);border:1px solid var(--linje);border-radius:1rem;padding:1.5rem 1.6rem}
+.kort p:last-child{margin-bottom:0}
+.trin{counter-reset:t;list-style:none;padding:0;margin:1.8rem 0 0;display:grid;gap:1.4rem}
+.trin li{counter-increment:t;display:grid;grid-template-columns:2.4rem 1fr;gap:1rem;align-items:start}
+.trin li::before{content:counter(t);font-family:"Playfair Display",Georgia,serif;font-size:1.1rem;width:2.4rem;height:2.4rem;display:grid;place-items:center;border-radius:50%;background:var(--rosa);color:var(--brun)}
+.fakta{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.6rem}
+.fakta li{padding-left:1.4rem;position:relative}
+.fakta li::before{content:"";position:absolute;left:0;top:.72em;width:.4rem;height:.4rem;border-radius:50%;background:var(--terrakotta)}
+dl.praktisk{display:grid;gap:.15rem 2rem;margin:1.6rem 0 0}
+dl.praktisk dt{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brun-blod);margin-top:1rem}
+dl.praktisk dd{margin:0;font-size:1.05rem}
+
+footer{padding:3rem 0 3.5rem;border-top:1px solid var(--linje);color:var(--brun-blod);font-size:.9rem}
+footer a{color:var(--brun-blod)}
+.footer-linjer{display:grid;gap:.35rem}
+
+@media (min-width:48rem){
+  .hero{padding:5.5rem 0 4.5rem}
+  .hero-grid{grid-template-columns:15rem 1fr;align-items:center;gap:3.5rem}
+  .kort-net{grid-template-columns:repeat(2,1fr);gap:1.3rem}
+  dl.praktisk{grid-template-columns:auto 1fr}
+  dl.praktisk dt{margin-top:.55rem}
+  dl.praktisk dd{margin-top:.55rem}
+  section{padding:4.5rem 0}
+}
