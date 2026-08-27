@@ -44,7 +44,7 @@ a{color:var(--terrakotta-mork)}
 /* hero */
 .hero{padding:4rem 0 3.5rem}
 .hero-grid{display:grid;gap:2.5rem}
-.foto{width:min(15rem,55vw);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.45)}
+.foto{width:min(16.5rem,62vw);aspect-ratio:1;border-radius:1.25rem;object-fit:cover;object-position:center top;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.4)}
 .overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--terrakotta-mork);margin:0 0 1rem}
 .titel-linje{color:var(--brun-blod);font-size:1.05rem;margin:.9rem 0 0}
 .citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,3.4vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
@@ -72,7 +72,7 @@ footer a{color:var(--brun-blod)}
 
 @media (min-width:48rem){
   .hero{padding:5.5rem 0 4.5rem}
-  .hero-grid{grid-template-columns:15rem 1fr;align-items:center;gap:3.5rem}
+  .hero-grid{grid-template-columns:16.5rem 1fr;align-items:center;gap:3.5rem}
   .kort-net{grid-template-columns:repeat(2,1fr);gap:1.3rem}
   dl.praktisk{grid-template-columns:auto 1fr}
   dl.praktisk dt{margin-top:.55rem}
