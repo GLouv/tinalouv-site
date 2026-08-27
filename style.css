@@ -19,8 +19,8 @@ body{
   font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,.serif{font-family:"Playfair Display","Lora",Georgia,"Times New Roman",serif;font-weight:500;line-height:1.2}
-h1{font-size:clamp(2.6rem,9vw,4.2rem);margin:0;letter-spacing:-.01em}
-h2{font-size:clamp(1.7rem,5vw,2.3rem);margin:0 0 1.1rem}
+h1{font-size:clamp(2.6rem,1.906rem + 2.96vw,4.2rem);margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,1.44rem + 1.11vw,2.3rem);margin:0 0 1.1rem}
 h3{font-size:1.2rem;margin:0 0 .4rem}
 p{margin:0 0 1.1rem}
 a{color:var(--link)}
@@ -49,7 +49,7 @@ a{color:var(--link)}
 .foto{width:min(16.5rem,62vw);aspect-ratio:1;border-radius:1.25rem;object-fit:cover;object-position:center top;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.4)}
 .overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--link);margin:0 0 1rem}
 .titel-linje{color:var(--brun-blod);font-size:1.05rem;margin:.9rem 0 0}
-.citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,3.4vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
+.citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,1.02rem + 0.56vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
 .citat cite{display:block;margin-top:.7rem;font-family:"Lato",sans-serif;font-style:normal;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-blod)}
 
 /* sektioner */
@@ -81,3 +81,14 @@ footer a{color:var(--brun-blod)}
   dl.praktisk dd{margin-top:.55rem}
   section{padding:4.5rem 0}
 }
+
+/* --- Dansk saetning: orddeling af lange sammensatte ord, pænere linjebrud --- */
+p,li,dd{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 4 3;text-wrap:pretty}
+h1,h2,h3{hyphens:manual;text-wrap:balance}
+a[href^="tel:"]{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* --- Tastatur-fokus: tydelig ring, kun ved tastatur --- */
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+
+/* --- Respektér systemets "reducér bevægelse" --- */
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important;animation-duration:.01ms !important}}
