@@ -1,94 +1,160 @@
+/* tinalouv.dk — Rolig grotesk
+   Varmen kommer fra farve og luft, ikke fra skriften.
+   Alle tekstfarver er kontrastmaalt mod deres egen baggrund (WCAG AA). */
+
 :root{
-  --creme:#FAF6F1;
-  --kort:#FFFDFB;
-  --brun:#3F3A34;
-  --brun-blod:#6B635A;
-  --terrakotta:#C97B63;
-  --terrakotta-mork:#A85F49;
-  --terrakotta-dyb:#8E4E3A;
-  --link:#A05543;
-  --rosa:#E8C9BE;
-  --linje:#E7DDD3;
-  --maks:min(100% - 2.5rem, 62rem);
+  --grund:#F4F2ED;      /* varm off-white — aldrig ren hvid */
+  --tone:#E4E0D6;       /* sektionsskift */
+  --flade:#FBFAF7;      /* kort */
+  --ink:#1B1B19;        /* 15.42:1 paa grund */
+  --ink-blod:#6E6A63;   /*  4.81:1 paa grund — kun paa grund, ikke paa tone */
+  --gron:#3E5C50;       /*  6.58:1 som tekst · hvid ovenpaa 7.36:1 */
+  --gron-dyb:#2E463D;
+  --ler:#C8663B;        /* KUN flade. Aldrig tekst, aldrig hvid ovenpaa */
+  --link:#9C4A24;       /*  5.49:1 paa grund */
+  --streg:#DAD5CA;
+
+  --maal:34rem;         /* ca. 69 tegn pr. linje */
+  --bred:min(100% - 2.5rem,62rem);
+
+  --fs-h1:clamp(2rem,1.62rem + 1.62vw,2.875rem);
+  --fs-h2:clamp(1.5rem,1.32rem + 0.78vw,1.95rem);
+  --fs-h3:clamp(1.15rem,1.09rem + 0.28vw,1.3rem);
+  --fs-lead:clamp(1.18rem,1.13rem + 0.23vw,1.31rem);
+  --fs-body:clamp(1.06rem,1.03rem + 0.12vw,1.125rem);
+  --fs-lille:clamp(.9375rem,.91rem + 0.12vw,1rem);
+
+  --luft-s:clamp(1rem,.89rem + .46vw,1.25rem);
+  --luft-m:clamp(1.5rem,1.28rem + .93vw,2rem);
+  --luft-l:clamp(2.25rem,1.93rem + 1.39vw,3rem);
+  --luft-xl:clamp(3.5rem,3.07rem + 1.85vw,4.5rem);
+  --sektion:clamp(3.5rem,2.6rem + 3.9vw,6rem);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--creme);color:var(--brun);
-  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;
+  margin:0;background:var(--grund);color:var(--ink);
+  font-family:"Schibsted Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:var(--fs-body);line-height:1.65;-webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.serif{font-family:"Playfair Display","Lora",Georgia,"Times New Roman",serif;font-weight:500;line-height:1.2}
-h1{font-size:clamp(2.6rem,1.906rem + 2.96vw,4.2rem);margin:0;letter-spacing:-.01em}
-h2{font-size:clamp(1.7rem,1.44rem + 1.11vw,2.3rem);margin:0 0 1.1rem}
-h3{font-size:1.2rem;margin:0 0 .4rem}
-p{margin:0 0 1.1rem}
+h1,h2,h3{font-weight:500;line-height:1.12;letter-spacing:-.018em;margin:0;text-wrap:balance;hyphens:manual}
+h1{font-size:var(--fs-h1)}
+h2{font-size:var(--fs-h2);margin-bottom:var(--luft-s)}
+h3{font-size:var(--fs-h3);letter-spacing:-.008em;margin-bottom:.3rem}
+p{margin:0 0 var(--luft-s);hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 4 3;text-wrap:pretty}
+p:last-child{margin-bottom:0}
 a{color:var(--link)}
-.wrap{width:var(--maks);margin-inline:auto}
-.smal{max-width:44rem}
+strong{font-weight:600}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:20;background:rgba(250,246,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linje)}
-.nav-inner{width:var(--maks);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
-.maerke{font-family:"Playfair Display",Georgia,serif;font-size:1.15rem;letter-spacing:.02em;text-decoration:none;color:var(--brun);white-space:nowrap}
-.nav-links{display:flex;gap:1.35rem;overflow-x:auto;scrollbar-width:none}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-links a{color:var(--brun-blod);text-decoration:none;font-size:.9rem;white-space:nowrap}
-.nav-links a:hover{color:var(--link)}
+.bred{width:var(--bred);margin-inline:auto}
+.smal{max-width:var(--maal)}
+.lead{font-size:var(--fs-lead);line-height:1.5;color:var(--ink-blod)}
 
-/* knapper */
-.knap{display:inline-block;background:var(--terrakotta-mork);color:#fff;text-decoration:none;padding:.85rem 1.6rem;border-radius:999px;font-size:1rem;letter-spacing:.01em;transition:background .2s}
-.knap:hover{background:var(--terrakotta-dyb)}
-.knap-let{display:inline-block;color:var(--brun);text-decoration:none;padding:.85rem 1.5rem;border:1px solid var(--linje);border-radius:999px;background:var(--kort);font-size:1rem}
-.knap-let:hover{border-color:var(--terrakotta)}
-.knapper{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
-
-/* hero */
-.hero{padding:4rem 0 3.5rem}
-.hero-grid{display:grid;gap:2.5rem}
-.foto{width:min(16.5rem,62vw);aspect-ratio:1;border-radius:1.25rem;object-fit:cover;object-position:center top;box-shadow:0 1.5rem 3rem -1.5rem rgba(63,58,52,.4)}
-.overskrift-lille{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--link);margin:0 0 1rem}
-.titel-linje{color:var(--brun-blod);font-size:1.05rem;margin:.9rem 0 0}
-.citat{margin:2.2rem 0 0;padding-left:1.25rem;border-left:3px solid var(--rosa);font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.15rem,1.02rem + 0.56vw,1.45rem);line-height:1.5;font-style:italic;color:var(--brun)}
-.citat cite{display:block;margin-top:.7rem;font-family:"Lato",sans-serif;font-style:normal;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-blod)}
-
-/* sektioner */
-section{padding:3.5rem 0;border-top:1px solid var(--linje)}
-.baand{background:var(--rosa);border-top:0}
-.kort-net{display:grid;gap:1.1rem;margin-top:1.8rem}
-.kort{background:var(--kort);border:1px solid var(--linje);border-radius:1rem;padding:1.5rem 1.6rem}
-.kort p:last-child{margin-bottom:0}
-.trin{counter-reset:t;list-style:none;padding:0;margin:1.8rem 0 0;display:grid;gap:1.4rem}
-.trin li{counter-increment:t;display:grid;grid-template-columns:2.4rem 1fr;gap:1rem;align-items:start}
-.trin li::before{content:counter(t);font-family:"Playfair Display",Georgia,serif;font-size:1.1rem;width:2.4rem;height:2.4rem;display:grid;place-items:center;border-radius:50%;background:var(--rosa);color:var(--brun)}
-.fakta{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.6rem}
-.fakta li{padding-left:1.4rem;position:relative}
-.fakta li::before{content:"";position:absolute;left:0;top:.72em;width:.4rem;height:.4rem;border-radius:50%;background:var(--terrakotta)}
-dl.praktisk{display:grid;gap:.15rem 2rem;margin:1.6rem 0 0}
-dl.praktisk dt{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brun-blod);margin-top:1rem}
-dl.praktisk dd{margin:0;font-size:1.05rem}
-
-footer{padding:3rem 0 3.5rem;border-top:1px solid var(--linje);color:var(--brun-blod);font-size:.9rem}
-footer a{color:var(--brun-blod)}
-.footer-linjer{display:grid;gap:.35rem}
-
-@media (min-width:48rem){
-  .hero{padding:5.5rem 0 4.5rem}
-  .hero-grid{grid-template-columns:16.5rem 1fr;align-items:center;gap:3.5rem}
-  .kort-net{grid-template-columns:repeat(2,1fr);gap:1.3rem}
-  dl.praktisk{grid-template-columns:auto 1fr}
-  dl.praktisk dt{margin-top:.55rem}
-  dl.praktisk dd{margin-top:.55rem}
-  section{padding:4.5rem 0}
+.maerkat{
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-blod);margin:0 0 var(--luft-s);
 }
 
-/* --- Dansk saetning: orddeling af lange sammensatte ord, pænere linjebrud --- */
-p,li,dd{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 4 3;text-wrap:pretty}
-h1,h2,h3{hyphens:manual;text-wrap:balance}
+/* --- navigation --- */
+.nav{border-bottom:1px solid var(--streg);background:var(--grund)}
+.nav-inder{width:var(--bred);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;flex-wrap:wrap}
+.maerke{font-size:1.05rem;font-weight:500;letter-spacing:-.01em;text-decoration:none;color:var(--ink);white-space:nowrap}
+.nav-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.nav-links a{color:var(--ink-blod);text-decoration:none;font-size:var(--fs-lille)}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--link)}
+
+/* --- knapper --- */
+.knap,.knap-let{
+  display:inline-block;text-decoration:none;font-size:1rem;font-weight:500;
+  padding:.8rem 1.5rem;border-radius:.35rem;min-height:44px;line-height:1.6;
+  transition:background-color .16s ease,border-color .16s ease;
+}
+.knap{background:var(--gron);color:#fff}
+.knap:hover{background:var(--gron-dyb)}
+.knap-let{background:transparent;color:var(--ink);border:1px solid var(--ink-blod)}
+.knap-let:hover{border-color:var(--gron);color:var(--gron)}
+.knapper{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:var(--luft-m)}
 a[href^="tel:"]{white-space:nowrap;font-variant-numeric:tabular-nums}
 
-/* --- Tastatur-fokus: tydelig ring, kun ved tastatur --- */
-:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+/* --- hero --- */
+.hero{padding:var(--sektion) 0}
+.hero-net{display:grid;gap:var(--luft-l)}
+.portraet-ramme{background:var(--ler);border-radius:.75rem;padding:.9rem;width:min(20rem,80vw)}
+.portraet{display:block;width:100%;height:auto;border-radius:.4rem}
+.hero h1{margin-bottom:var(--luft-s);max-width:18ch}
+.hero .lead{max-width:32rem}
+.tillid{
+  font-family:"DM Mono",monospace;font-size:.78rem;letter-spacing:.04em;
+  color:var(--ink-blod);margin:var(--luft-m) 0 0;line-height:1.7;
+}
+.citat{
+  margin:var(--luft-m) 0 0;padding-left:1.1rem;border-left:2px solid var(--gron);
+  font-size:var(--fs-lead);line-height:1.5;max-width:30rem;
+}
+.citat cite{
+  display:block;margin-top:.6rem;font-style:normal;
+  font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-blod);
+}
 
-/* --- Respektér systemets "reducér bevægelse" --- */
-@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important;animation-duration:.01ms !important}}
+/* --- sektioner --- */
+section{padding:var(--sektion) 0}
+.baand{background:var(--tone)}
+.baand .maerkat,.baand .lead{color:var(--ink)}
+.stribe{border-top:1px solid var(--streg)}
+
+/* liste med genkendelse */
+.genkend{list-style:none;padding:0;margin:0;display:grid;gap:.8rem;max-width:var(--maal)}
+.genkend li{padding-left:1.5rem;position:relative}
+.genkend li::before{content:"";position:absolute;left:0;top:.68em;width:.45rem;height:.45rem;border-radius:50%;background:var(--ler)}
+
+/* kort */
+.kort-net{display:grid;gap:1rem;margin-top:var(--luft-m)}
+@media(min-width:44rem){.kort-net{grid-template-columns:repeat(2,1fr)}}
+.kort{background:var(--flade);border:1px solid var(--streg);border-radius:.5rem;padding:1.3rem 1.4rem}
+.kort p{font-size:var(--fs-lille);color:var(--ink-blod);margin:0}
+.baand .kort p{color:var(--ink-blod)}
+
+/* nummererede trin */
+.trin{counter-reset:t;list-style:none;padding:0;margin:var(--luft-m) 0 0;display:grid;gap:var(--luft-m);max-width:var(--maal)}
+.trin li{counter-increment:t;display:grid;grid-template-columns:2.2rem 1fr;gap:1rem;align-items:start}
+.trin li::before{
+  content:counter(t,decimal-leading-zero);
+  font-family:"DM Mono",monospace;font-size:.85rem;color:var(--gron);
+  padding-top:.2rem;font-variant-numeric:tabular-nums;
+}
+
+/* definitionsliste */
+dl.praktisk{display:grid;gap:.2rem 2rem;margin:var(--luft-m) 0 0;max-width:var(--maal)}
+dl.praktisk dt{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-blod);margin-top:var(--luft-s)}
+dl.praktisk dd{margin:0}
+@media(min-width:44rem){
+  dl.praktisk{grid-template-columns:11rem 1fr}
+  dl.praktisk dt{margin-top:.5rem}
+  dl.praktisk dd{margin-top:.5rem}
+}
+
+/* fagfolk-doer */
+.doer{border-top:1px solid var(--streg);border-bottom:1px solid var(--streg);padding:var(--luft-l) 0}
+.doer h2{font-size:var(--fs-h3);margin-bottom:.4rem}
+.doer p{color:var(--ink-blod);max-width:var(--maal)}
+.doer-links{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:var(--luft-s)}
+.doer-links a{font-size:var(--fs-lille)}
+
+/* fakta */
+.fakta{list-style:none;padding:0;margin:var(--luft-m) 0 0;display:grid;gap:.55rem;max-width:var(--maal)}
+.fakta li{padding-left:1.5rem;position:relative}
+.fakta li::before{content:"";position:absolute;left:.05rem;top:.72em;width:.7rem;height:1px;background:var(--gron)}
+
+footer{border-top:1px solid var(--streg);padding:var(--luft-xl) 0;color:var(--ink-blod);font-size:var(--fs-lille)}
+footer a{color:var(--ink-blod)}
+.footer-net{display:grid;gap:.4rem}
+
+:focus-visible{outline:2px solid var(--gron);outline-offset:3px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+@media(min-width:52rem){
+  .hero-net{grid-template-columns:20rem 1fr;align-items:center;gap:var(--luft-xl)}
+}
